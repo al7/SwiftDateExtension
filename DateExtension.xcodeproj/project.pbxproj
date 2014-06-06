@@ -10,6 +10,8 @@
 		4CF842B319415DE3004DCFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF842B219415DE3004DCFB6 /* AppDelegate.swift */; };
 		4CF842B519415DE3004DCFB6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF842B419415DE3004DCFB6 /* Images.xcassets */; };
 		4CF842C119415DE3004DCFB6 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF842C019415DE3004DCFB6 /* DateExtensionTests.swift */; };
+		4CF842CB19415E18004DCFB6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF842CA19415E18004DCFB6 /* DateExtension.swift */; };
+		4CF842CC19415E18004DCFB6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF842CA19415E18004DCFB6 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,7 @@
 		4CF842BA19415DE3004DCFB6 /* DateExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DateExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF842BF19415DE3004DCFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF842C019415DE3004DCFB6 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
+		4CF842CA19415E18004DCFB6 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 				4CF842B219415DE3004DCFB6 /* AppDelegate.swift */,
 				4CF842B419415DE3004DCFB6 /* Images.xcassets */,
 				4CF842B019415DE3004DCFB6 /* Supporting Files */,
+				4CF842CA19415E18004DCFB6 /* DateExtension.swift */,
 			);
 			path = DateExtension;
 			sourceTree = "<group>";
@@ -201,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF842B319415DE3004DCFB6 /* AppDelegate.swift in Sources */,
+				4CF842CB19415E18004DCFB6 /* DateExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF842C119415DE3004DCFB6 /* DateExtensionTests.swift in Sources */,
+				4CF842CC19415E18004DCFB6 /* DateExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
