@@ -1,68 +1,88 @@
-//
-//  Created by Alex Leite on 6/5/14.
-//  Copyright (c) 2014 al7dev. All rights reserved.
-//
+/*
+
+Copyright (c) 2015 - Alex Leite (al7dev)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+*/
 
 import Foundation
 
-extension NSDate {
-    func plusSeconds(s: UInt) -> NSDate {
+public extension NSDate {
+    
+    public func plusSeconds(s: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: Int(s), minutes: 0, hours: 0, days: 0, weeks: 0, months: 0, years: 0)
     }
     
-    func minusSeconds(s: UInt) -> NSDate {
+    public func minusSeconds(s: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: -Int(s), minutes: 0, hours: 0, days: 0, weeks: 0, months: 0, years: 0)
     }
     
-    func plusMinutes(m: UInt) -> NSDate {
+    public func plusMinutes(m: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: Int(m), hours: 0, days: 0, weeks: 0, months: 0, years: 0)
     }
     
-    func minusMinutes(m: UInt) -> NSDate {
+    public func minusMinutes(m: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: -Int(m), hours: 0, days: 0, weeks: 0, months: 0, years: 0)
     }
     
-    func plusHours(h: UInt) -> NSDate {
+    public func plusHours(h: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: Int(h), days: 0, weeks: 0, months: 0, years: 0)
     }
     
-    func minusHours(h: UInt) -> NSDate {
+    public func minusHours(h: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: -Int(h), days: 0, weeks: 0, months: 0, years: 0)
     }
     
-    func plusDays(d: UInt) -> NSDate {
+    public func plusDays(d: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: 0, days: Int(d), weeks: 0, months: 0, years: 0)
     }
     
-    func minusDays(d: UInt) -> NSDate {
+    public func minusDays(d: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: 0, days: -Int(d), weeks: 0, months: 0, years: 0)
     }
     
-    func plusWeeks(w: UInt) -> NSDate {
+    public func plusWeeks(w: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: 0, days: 0, weeks: Int(w), months: 0, years: 0)
     }
     
-    func minusWeeks(w: UInt) -> NSDate {
+    public func minusWeeks(w: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: 0, days: 0, weeks: -Int(w), months: 0, years: 0)
     }
     
-    func plusMonths(m: UInt) -> NSDate {
+    public func plusMonths(m: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: 0, days: 0, weeks: 0, months: Int(m), years: 0)
     }
     
-    func minusMonths(m: UInt) -> NSDate {
+    public func minusMonths(m: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: 0, days: 0, weeks: 0, months: -Int(m), years: 0)
     }
     
-    func plusYears(y: UInt) -> NSDate {
+    public func plusYears(y: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: 0, days: 0, weeks: 0, months: 0, years: Int(y))
     }
     
-    func minusYears(y: UInt) -> NSDate {
+    public func minusYears(y: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: 0, minutes: 0, hours: 0, days: 0, weeks: 0, months: 0, years: -Int(y))
     }
     
-    func addComponentsToDate(seconds sec: Int, minutes min: Int, hours hrs: Int, days d: Int, weeks wks: Int, months mts: Int, years yrs: Int) -> NSDate {
+    private func addComponentsToDate(seconds sec: Int, minutes min: Int, hours hrs: Int, days d: Int, weeks wks: Int, months mts: Int, years yrs: Int) -> NSDate {
         var dc:NSDateComponents = NSDateComponents()
         dc.second = sec
         dc.minute = min
@@ -71,10 +91,10 @@ extension NSDate {
         dc.weekOfYear = wks
         dc.month = mts
         dc.year = yrs
-        return NSCalendar.currentCalendar().dateByAddingComponents(dc, toDate: self, options: nil)
+        return NSCalendar.currentCalendar().dateByAddingComponents(dc, toDate: self, options: nil)!
     }
     
-    func midnightUTCDate() -> NSDate {
+    public func midnightUTCDate() -> NSDate {
         var dc:NSDateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: self)
         dc.hour = 0
         dc.minute = 0
@@ -82,40 +102,40 @@ extension NSDate {
         dc.nanosecond = 0
         dc.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         
-        return NSCalendar.currentCalendar().dateFromComponents(dc)
+        return NSCalendar.currentCalendar().dateFromComponents(dc)!
     }
     
-    class func secondsBetween(date1 d1:NSDate, date2 d2:NSDate) -> Int {
+    public class func secondsBetween(date1 d1:NSDate, date2 d2:NSDate) -> Int {
         let dc = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitSecond, fromDate: d1, toDate: d2, options:nil)
         return dc.second
     }
     
-    class func minutesBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
+    public class func minutesBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
         let dc = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMinute, fromDate: d1, toDate: d2, options: nil)
         return dc.minute
     }
     
-    class func hoursBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
+    public class func hoursBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
         let dc = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitHour, fromDate: d1, toDate: d2, options: nil)
         return dc.hour
     }
     
-    class func daysBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
+    public class func daysBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
         let dc = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitDay, fromDate: d1, toDate: d2, options: nil)
         return dc.day
     }
     
-    class func weeksBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
+    public class func weeksBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
         let dc = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitWeekOfYear, fromDate: d1, toDate: d2, options: nil)
         return dc.weekOfYear
     }
     
-    class func monthsBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
+    public class func monthsBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
         let dc = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitMonth, fromDate: d1, toDate: d2, options: nil)
         return dc.month
     }
     
-    class func yearsBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
+    public class func yearsBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
         let dc = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear, fromDate: d1, toDate: d2, options: nil)
         return dc.year
     }
