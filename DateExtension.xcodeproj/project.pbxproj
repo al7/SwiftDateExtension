@@ -383,6 +383,7 @@
 				4CF842C619415DE3004DCFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CF842C719415DE3004DCFB6 /* Build configuration list for PBXNativeTarget "DateExtensionTests" */ = {
 			isa = XCConfigurationList;
@@ -391,6 +392,7 @@
 				4CF842C919415DE3004DCFB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
