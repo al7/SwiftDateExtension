@@ -95,7 +95,7 @@ public extension NSDate {
     }
     
     public func midnightUTCDate() -> NSDate {
-        var dc:NSDateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: self)
+        var dc:NSDateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: self)
         dc.hour = 0
         dc.minute = 0
         dc.second = 0
