@@ -25,7 +25,7 @@ THE SOFTWARE.
 import Foundation
 
 public extension NSDate {
-    
+        
     public func plusSeconds(s: UInt) -> NSDate {
         return self.addComponentsToDate(seconds: Int(s), minutes: 0, hours: 0, days: 0, weeks: 0, months: 0, years: 0)
     }
@@ -138,5 +138,31 @@ public extension NSDate {
     public class func yearsBetween(date1 d1: NSDate, date2 d2: NSDate) -> Int {
         let dc = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear, fromDate: d1, toDate: d2, options: nil)
         return dc.year
+    }
+    
+    //MARK- Computed Properties
+    
+    public var day: UInt {
+        return UInt(NSCalendar.currentCalendar().component(.CalendarUnitDay, fromDate: self))
+    }
+    
+    public var month: UInt {
+        return UInt(NSCalendar.currentCalendar().component(.CalendarUnitMonth, fromDate: self))
+    }
+    
+    public var year: UInt {
+        return UInt(NSCalendar.currentCalendar().component(.CalendarUnitYear, fromDate: self))
+    }
+    
+    public var hour: UInt {
+        return UInt(NSCalendar.currentCalendar().component(.CalendarUnitHour, fromDate: self))
+    }
+    
+    public var minute: UInt {
+        return UInt(NSCalendar.currentCalendar().component(.CalendarUnitMinute, fromDate: self))
+    }
+    
+    public var second: UInt {
+        return UInt(NSCalendar.currentCalendar().component(.CalendarUnitSecond, fromDate: self))
     }
 }

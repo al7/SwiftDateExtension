@@ -6,17 +6,30 @@
 import XCTest
 
 class DateExtensionTests: XCTestCase {
-    var today:NSDate?
+    var today: NSDate?
+    var fixedDate: NSDate?
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         today = NSDate()
+        
+        let dateComponents = NSDateComponents()
+        dateComponents.month = 10
+        dateComponents.day = 10
+        dateComponents.year = 2010
+        dateComponents.hour = 10
+        dateComponents.minute = 10
+        dateComponents.second = 10
+        dateComponents.calendar = NSCalendar.currentCalendar()
+        fixedDate = dateComponents.date
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         today = nil
+        fixedDate = nil
+        
         super.tearDown()
     }
 
@@ -66,5 +79,53 @@ class DateExtensionTests: XCTestCase {
         let testDate = today!.plusMonths(28)
         let secsBetween = NSDate.yearsBetween(date1: today!, date2: testDate)
         XCTAssert(secsBetween == 2, "There should be 2 years between today and test date")
-    }    
+    }
+    
+    func testDirectMonth() {
+        var month: UInt = 0
+        if let date = fixedDate {
+            month = date.month
+        }
+        XCTAssert(month == 10, "Month should be 10")
+    }
+    
+    func testDirectDay() {
+        var day: UInt = 0
+        if let date = fixedDate {
+            day = date.day
+        }
+        XCTAssert(day == 10, "Day should be 10")
+    }
+    
+    func testDirectYear() {
+        var year: UInt = 0
+        if let date = fixedDate {
+            year = date.year
+        }
+        XCTAssert(year == 2010, "Year should be 2010")
+    }
+    
+    func testDirectHour() {
+        var hour: UInt = 0
+        if let date = fixedDate {
+            hour = date.hour
+        }
+        XCTAssert(hour == 10, "Month should be 10")
+    }
+    
+    func testDirectMinute() {
+        var minute: UInt = 0
+        if let date = fixedDate {
+            minute = date.minute
+        }
+        XCTAssert(minute == 10, "Minute should be 10")
+    }
+    
+    func testDirectSecond() {
+        var second: UInt = 0
+        if let date = fixedDate {
+            second = date.second
+        }
+        XCTAssert(second == 10, "Second should be 10")
+    }
 }
