@@ -140,6 +140,16 @@ public extension NSDate {
         return dc.year
     }
     
+    //MARK- Comparison Methods
+    
+    public func isGreaterThan(date: NSDate) -> Bool {
+        return (self.compare(date) == .OrderedDescending)
+    }
+    
+    public func isLessThan(date: NSDate) -> Bool {
+        return (self.compare(date) == .OrderedAscending)
+    }
+    
     //MARK- Computed Properties
     
     public var day: UInt {

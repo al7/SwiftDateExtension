@@ -128,4 +128,18 @@ class DateExtensionTests: XCTestCase {
         }
         XCTAssert(second == 10, "Second should be 10")
     }
+    
+    func testGreaterComparison() {
+        var now = NSDate()
+        var then = now.minusDays(1)
+        var greater = now.isGreaterThan(then)
+        XCTAssert(greater == true, "Now should be greater than then")
+    }
+    
+    func testLessComparison() {
+        var now = NSDate()
+        var tomorrow = now.plusDays(1)
+        var lessThan = now.isLessThan(tomorrow)
+        XCTAssert(lessThan == true, "Now should be less than tomorrow")
+    }
 }
