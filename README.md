@@ -24,6 +24,14 @@ let year = NSDate().year
 let month = NSDate().month
 let seconds = NSDate().seconds
 
+//-- Comparing two dates:
+
+let now = NSDate()
+let then = now.minusDays(1)
+
+let comparison1: Bool = now.isGreaterThan(then) //-- true
+let comparison2: Bool = now.isLessThan(then) //-- false
+
 ```
 
 I'm trying to keep this up to date. Right now, it's fully compliant to Swift 1.2. Feel free to use this sample however you see fit. I hope you find this helpful when venturing through Swift. 
