@@ -21,8 +21,8 @@ class DateExtensionTests: XCTestCase {
         dateComponents.hour = 10
         dateComponents.minute = 10
         dateComponents.second = 10
-        (dateComponents as NSDateComponents).calendar = NSCalendar.current
-        fixedDate = (dateComponents as NSDateComponents).date
+        dateComponents.calendar = NSCalendar.current
+        fixedDate = dateComponents.date
     }
     
     override func tearDown() {
@@ -77,8 +77,8 @@ class DateExtensionTests: XCTestCase {
     
     func testYearsBetween() {
         let testDate = today!.plus(months:28)
-        let secsBetween = Date.yearsBetween(date1: today!, date2: testDate)
-        XCTAssert(secsBetween == 2, "There should be 2 years between today and test date")
+        let yearsBetween = Date.yearsBetween(date1: today!, date2: testDate)
+        XCTAssert(yearsBetween == 2, "There should be 2 years between today and test date")
     }
     
     func testDirectMonth() {
