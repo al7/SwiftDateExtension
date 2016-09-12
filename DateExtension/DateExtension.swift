@@ -91,7 +91,7 @@ public extension Date {
         dc.weekOfYear = wks
         dc.month = mts
         dc.year = yrs
-        return Calendar.current.date(byAdding: dc, to: self, wrappingComponents: true)!
+        return Calendar.current.date(byAdding: dc, to: self)!
     }
     
     public func midnightUTCDate() -> Date {
