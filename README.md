@@ -10,8 +10,8 @@ Here are a few examples of the things you can do:
 ```swift
 //-- Adding time units:
 
-let date1 = NSDate().plus(months: 2).minus(days: 5).plus(seconds: 5)
-let date2 = NSDate().plus(years: 1).minus(months: 6)
+let date1 = Date().plus(months: 2).minus(days: 5).plus(seconds: 5)
+let date2 = Date().plus(years: 1).minus(months: 6)
 
 //-- Calculating difference between dates:
 
