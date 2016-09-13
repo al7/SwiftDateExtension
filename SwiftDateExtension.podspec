@@ -10,5 +10,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/al7/SwiftDateExtension.git", :tag => "0.0.6" }
   s.source_files = "DateExtension/DateExtension.swift"
   s.requires_arc = true
-
+  s.xcconfig = {
+    'SWIFT_VERSION' => '3.0'
+  }
 end
