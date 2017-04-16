@@ -44,6 +44,6 @@ You can simply include the ``DateExtension.swift`` file to your project. To make
 pod 'SwiftDateExtension'
 ```
 
-####License
+#### License
 
 This component is available under MIT license.
